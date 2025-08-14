@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello Jee Madaam</h1>
+    <button id="btn">Click Me</button>
+    
+</body>
+<script>
+    const sayhello = function() {
+        console.log('Hello Jee');
+    }
+    setTimeout(sayhello,2000)
+
+    const marketing = function(){
+        document.querySelector('h1').innerHTML="Hey i have an offer for you";
+    }
+    setTimeout(marketing, 3000);
+
+    const btn = document.getElementById('btn');
+    btn.addEventListener('click', function() {
+        console.log('Button clicked!');
+    });
+
+     const btnColor = function(){
+        document.querySelector('h1 ').style.color = 'red';
+     }
+
+     setTimeout(btnColor, 5000);
+
+ const changeme = setTimeout(btnColor, 5000);
+
+
+btn.addEventListener('click', function() {
+    clearTimeout(changeme);
+    console.log('Timeout cleared!');
+});
+</script>
+</html>

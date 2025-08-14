@@ -30,10 +30,12 @@ const course = {
     courseInstructor: "akbar"
 }
 
+// different ways to access the properties of an object
  console.log(course.courseName);
 
+// using destructuring to extract properties
  const{courseInstructor} = course;
     console.log(courseInstructor);
-
+// using destructuring to extract properties with alias
  const {duration: dur} = course;
     console.log(dur);

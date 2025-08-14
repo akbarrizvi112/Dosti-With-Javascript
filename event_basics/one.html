@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+     <style>
+        #div1 {
+            background-color: lightgreen;
+            padding: 24px;
+            border: 1px solid black;
+        }
+
+        #div2 {
+            background-color: yellow;
+            padding: 18px;
+            border: 1px solid black;
+
+        }
+
+        #div3 {
+            background-color: orange;
+            border: 1px solid black;
+        }
+    </style>
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+ <div id="div1">
+        Component 1
+        <div id="div2">
+            component 2
+            <div id="div3">
+                component 3
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript code for event bubbling -->
+    
+
+<script>
+    // odd approach to add event listener
+    // document.getElementById('owl').onclick = function() {
+    //     alert('Owl image clicked!');
+    // }; 
+
+
+    // Using addEventListener for bEST  practice
+    document.getElementById('owl').addEventListener('click', function() {
+        alert('Owl image clicked again!');
+    });
+
+    // attachEvent() is an old method for IE, not recommended in modern browsers
+
+
+    document.getElementById('owl').addEventListener('click', function(e) {
+       console.log(e);
+
+
+    
+          let div1 = document.querySelector("#div1");
+        let div2 = document.querySelector("#div2");
+        let div3 = document.querySelector("#div3");
+
+        div1.addEventListener("click", function (event) {
+            alert("Component 1 event clicked");
+        });
+
+        div2.addEventListener("click", function (event) {
+            alert("Component 2 event clicked");
+        });
+
+        div3.addEventListener("click", function (event) {
+            alert("Component 3 event clicked");
+        });
+   
+    });
+</script>  
+</html>
